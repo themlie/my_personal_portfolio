@@ -11,14 +11,14 @@ class ExperienceSection extends StatelessWidget {
     _ExperienceData(
       company: 'Blue Network',
       role: 'Mobil Program Geliştiricisi',
-      period: '2024 — Günümüz',
+      period: '2026 — Günümüz',
       description:
           'Flutter ile mobil uygulama geliştirme süreçlerinde aktif rol alarak, kullanıcı deneyimini ön planda tutan uygulamalar geliştirdim. Takım içi iş birliği ve Agile süreçlerle projeler yönettim.',
     ),
     _ExperienceData(
       company: 'Deepreo Siber Güvenlik',
       role: 'Siber Güvenlik Stajyeri',
-      period: '2024',
+      period: '2026',
       description:
           'Wi-Fi güvenliği ve sosyal mühendislik üzerine fiziksel CTF organizasyonları düzenledim. Penetrasyon testi süreçlerini deneyimledim ve güvenlik zafiyetlerinin tespiti konusunda pratik kazandım.',
     ),
