@@ -215,7 +215,7 @@ class AboutSection extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         Text(
-          'Zonguldak Bülent Ecevit Üniversitesi Bilgisayar Mühendisliği ve İstanbul Üniversitesi Web Tasarımı ve Kodlama bölümlerinde eğitimimi sürdürüyorum.',
+          'Zonguldak Bülent Ecevit Üniversitesi Bilgisayar Mühendisliği ve İstanbul Üniversitesi Web Tasarımı bölümlerinde eğitimime devam ediyorum. Akademik yolculuğumla eş zamanlı olarak, Blue Network\'te Mobil Geliştirici ve Deepreo\'da Siber Güvenlik Stajyeri olarak aktif sektörel tecrübe kazanıyorum.',
           style: GoogleFonts.inter(
             fontSize: 15,
             height: 1.7,
@@ -224,16 +224,7 @@ class AboutSection extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         Text(
-          'Mobil uygulama geliştirme dünyasında Flutter ile projeler üretirken, siber güvenlik alanında güvenlik zafiyetleri keşfetmeye ve CTF yarışmalarına katılmaya tutkuyla bağlıyım.',
-          style: GoogleFonts.inter(
-            fontSize: 15,
-            height: 1.7,
-            color: AppColors.textSecondary,
-          ),
-        ),
-        const SizedBox(height: 16),
-        Text(
-          'Low-level mimarilere (8051 Assembly gibi) olan merakım, sistemlerin nasıl çalıştığını derinlemesine anlamam konusunda beni farklı kılıyor.',
+          'Flutter, Node.js ve Rust gibi teknolojilerle performanslı uygulamalar inşa ederken; diğer yandan sızma testleri ve web zafiyetleri (SQLi, IDOR vb.) üzerine yoğunlaşarak sistemlerin güvenliğini sağlamaya odaklanıyorum. Amacım hem yenilikçi projeler geliştirmek hem de bu yapıları en yüksek güvenlik standartlarıyla korumak.',
           style: GoogleFonts.inter(
             fontSize: 15,
             height: 1.7,
