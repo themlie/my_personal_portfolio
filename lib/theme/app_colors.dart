@@ -4,10 +4,14 @@ class AppColors {
   AppColors._();
 
   // Backgrounds
-  static const Color background = Color(0xFF000000); // Pure Black
-  static const Color surface = Color(0xFF0A0A0A);
-  static const Color surfaceLight = Color(0xFF141414);
-  static const Color card = Color(0xFF0D0D0D);
+  static const Color background = Color(0xFF09090B); // Zinc 950
+  static const Color surface = Color(0xFF18181B); // Zinc 900
+  static const Color surfaceLight = Color(0xFF27272A); // Zinc 800
+  static const Color card = Color(0xFF0F172A); // Slate 900
+
+  // Glow / Brand
+  static const Color brandGlow1 = Color(0xFF3B82F6); // Electric Blue
+  static const Color brandGlow2 = Color(0xFF8B5CF6); // Purple
 
   // Accents (Monochrome)
   static const Color accentCyan = Color(0xFFFFFFFF); // White accent

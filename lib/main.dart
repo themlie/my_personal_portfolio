@@ -84,6 +84,44 @@ class _PortfolioPageState extends State<PortfolioPage> {
       backgroundColor: AppColors.background,
       body: Stack(
         children: [
+          // Top right blue glow
+          Positioned(
+            top: -200,
+            right: -200,
+            child: Container(
+              width: 600,
+              height: 600,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.brandGlow1.withValues(alpha: 0.15),
+                    Colors.transparent,
+                  ],
+                  stops: const [0.0, 1.0],
+                ),
+              ),
+            ),
+          ),
+          // Bottom left purple glow
+          Positioned(
+            bottom: -150,
+            left: -150,
+            child: Container(
+              width: 500,
+              height: 500,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.brandGlow2.withValues(alpha: 0.15),
+                    Colors.transparent,
+                  ],
+                  stops: const [0.0, 1.0],
+                ),
+              ),
+            ),
+          ),
           // Main scrollable content
           SingleChildScrollView(
             controller: _scrollController,

@@ -44,16 +44,16 @@ class _GlassCardState extends State<GlassCard> {
           borderRadius: BorderRadius.circular(widget.borderRadius),
           border: Border.all(
             color: _isHovered
-                ? Colors.white.withValues(alpha: 0.15)
+                ? AppColors.brandGlow2.withValues(alpha: 0.3)
                 : AppColors.glassBorder,
             width: 1,
           ),
           boxShadow: _isHovered
               ? [
                   BoxShadow(
-                    color: Colors.white.withValues(alpha: 0.03),
-                    blurRadius: 20,
-                    offset: const Offset(0, 10),
+                    color: AppColors.brandGlow1.withValues(alpha: 0.1),
+                    blurRadius: 24,
+                    offset: const Offset(0, 8),
                   )
                 ]
               : [],
