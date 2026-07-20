@@ -21,22 +21,22 @@ class ProjectsSection extends StatelessWidget {
       githubUrl: 'https://github.com/themlie/Network_Traffic_Dashboard',
     ),
     _ProjectData(
-      title: 'miniCTF',
-      subtitle: 'Zafiyetli Web Uygulaması ve CTF Platformu',
+      title: 'Stellar Escrow Marketplace',
+      subtitle: 'Blockchain Tabanlı Pazar Yeri',
       description:
-          'Yaygın web güvenlik açıklarını (SQLi, IDOR, LFI vb.) barındıran ve siber güvenlik eğitimleri için geliştirilmiş \"Capture The Flag\" platformu.',
-      technologies: ['Node.js', 'Express.js', 'Docker', 'SQLite'],
-      icon: Icons.flag_rounded,
-      githubUrl: 'https://github.com/themlie/miniCTF',
+          'Stellar ağı üzerinde çalışan, güvenli alışveriş sağlayan akıllı kontrat destekli bir emanet (escrow) pazar yeri uygulaması.',
+      technologies: ['TypeScript', 'Stellar', 'Smart Contracts', 'Web3'],
+      icon: Icons.currency_bitcoin_rounded,
+      githubUrl: 'https://github.com/themlie/stellar-escrow-marketplace',
     ),
     _ProjectData(
-      title: 'Smart IP Vault',
-      subtitle: 'Blockchain Akıllı Kontrat',
+      title: 'Tolga Topalahmetoğlu Portfolyo',
+      subtitle: 'Kişisel Web Sitesi',
       description:
-          'Stellar ağı üzerinde Soroban ve Rust ile geliştirilen fikri mülkiyet haklarını blockchain üzerinde güvence altına alan akıllı kontrat projesi.',
-      technologies: ['Rust', 'Soroban', 'Stellar', 'Blockchain'],
-      icon: Icons.link_rounded,
-      githubUrl: 'https://github.com/themlie/Rise-In-Contract',
+          'Modern web teknolojileri kullanılarak geliştirilmiş, responsive ve şık bir kişisel portfolyo sitesi.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      icon: Icons.web_rounded,
+      liveUrl: 'https://www.digitolmedia.com/',
     ),
   ];
 
@@ -204,6 +204,7 @@ class _ProjectData {
   final List<String> technologies;
   final IconData icon;
   final String? githubUrl;
+  final String? liveUrl;
 
   const _ProjectData({
     required this.title,
@@ -212,6 +213,7 @@ class _ProjectData {
     required this.technologies,
     required this.icon,
     this.githubUrl,
+    this.liveUrl,
   });
 }
 
@@ -284,11 +286,28 @@ class _ProjectCard extends StatelessWidget {
                 .map((tech) => SkillChip(label: tech))
                 .toList(),
           ),
-          if (data.githubUrl != null) ...[
+          if (data.githubUrl != null || data.liveUrl != null) ...[
             const SizedBox(height: 24),
             const Divider(color: AppColors.glassBorder),
             const SizedBox(height: 16),
-            _GithubButton(url: data.githubUrl!),
+            Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              children: [
+                if (data.githubUrl != null)
+                  _ProjectLinkButton(
+                    url: data.githubUrl!,
+                    title: 'Kaynak Kod',
+                    iconData: Icons.code_rounded,
+                  ),
+                if (data.liveUrl != null)
+                  _ProjectLinkButton(
+                    url: data.liveUrl!,
+                    title: 'Siteye Git',
+                    iconData: Icons.language_rounded,
+                  ),
+              ],
+            ),
           ]
         ],
       ),
@@ -296,16 +315,22 @@ class _ProjectCard extends StatelessWidget {
   }
 }
 
-class _GithubButton extends StatefulWidget {
+class _ProjectLinkButton extends StatefulWidget {
   final String url;
+  final String title;
+  final IconData iconData;
 
-  const _GithubButton({required this.url});
+  const _ProjectLinkButton({
+    required this.url,
+    required this.title,
+    required this.iconData,
+  });
 
   @override
-  State<_GithubButton> createState() => _GithubButtonState();
+  State<_ProjectLinkButton> createState() => _ProjectLinkButtonState();
 }
 
-class _GithubButtonState extends State<_GithubButton> {
+class _ProjectLinkButtonState extends State<_ProjectLinkButton> {
   bool _isHovered = false;
 
   @override
@@ -331,12 +356,12 @@ class _GithubButtonState extends State<_GithubButton> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
-                Icons.code_rounded,
+                widget.iconData,
                 size: 16,
                 color: _isHovered ? AppColors.textPrimary : AppColors.textSecondary,
               ),
               const SizedBox(width: 8),
-              const Text('Kaynak Kod'),
+              Text(widget.title),
               const SizedBox(width: 4),
               Icon(
                 Icons.arrow_forward_rounded,
